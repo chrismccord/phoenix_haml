@@ -16,8 +16,15 @@ defmodule PhoenixHaml.Engine do
 
   defp engine_for(name) do
     case Phoenix.Template.format_encoder(name) do
-      Phoenix.HTML.Engine -> Phoenix.HTML.Engine
-      _                   -> EEx.SmartEngine
+      Phoenix.Template.HTML ->
+        unless Code.ensure_loaded?(Phoenix.HTML.Engine) do
+          raise "Could not load Phoenix.HTML.Engine to use with .html.haml templates. " <>
+                "You can configure your own format encoder for HTML but we recommend " <>
+                "adding phoenix_html as a dependency as it provides XSS protection."
+        end
+        Phoenix.HTML.Engine
+      _ ->
+        EEx.SmartEngine
     end
   end
 end
