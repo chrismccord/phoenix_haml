@@ -15,3 +15,19 @@
   config :phoenix, :template_engines,
     haml: PhoenixHaml.Engine
 ```
+
+## Optional
+
+Add haml extension to Phoenix live reload in `config/dev.exs`
+
+```elixir
+  config :hello_phoenix, HelloPhoenix.Endpoint,
+    live_reload: [
+      patterns: [
+        ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+        ~r{web/views/.*(ex)$},
+        ~r{web/templates/.*(eex|haml)$}
+      ]
+    ]
+
+```
