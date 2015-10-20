@@ -12,8 +12,8 @@
   2. Add the following your Phoenix `config/config.exs`
 
 ```elixir
-  config :phoenix, :template_engines,
-    haml: PhoenixHaml.Engine
+config :phoenix, :template_engines,
+  haml: PhoenixHaml.Engine
 ```
 
 ## Optional
