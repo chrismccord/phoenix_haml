@@ -24,9 +24,8 @@ defmodule PhoenixHaml.Mixfile do
 
   defp deps do
     [
-      {:phoenix, "~> 1.0.0"},
+      {:phoenix, "~> 1.0"},
       {:phoenix_html, "~> 2.1"},
-      {:cowboy, "~> 1.0.0", only: [:dev, :test]},
       {:calliope, "~> 0.3.0"}
     ]
   end
