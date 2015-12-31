@@ -2,7 +2,7 @@
   "cowboy": {:hex, :cowboy, "1.0.2"},
   "cowlib": {:hex, :cowlib, "1.0.1"},
   "phoenix": {:hex, :phoenix, "1.1.0"},
-  "phoenix_html": {:hex, :phoenix_html, "2.2.0"},
+  "phoenix_html": {:hex, :phoenix_html, "2.3.0"},
   "plug": {:hex, :plug, "1.0.3"},
   "poison": {:hex, :poison, "1.5.0"},
   "ranch": {:hex, :ranch, "1.1.0"}}
