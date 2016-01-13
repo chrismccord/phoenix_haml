@@ -15,7 +15,7 @@
     config :phoenix, :template_engines,
       haml: PhoenixHaml.Engine
      ```
-  3. Use the `.html.haml` extensions for your templates
+  3. Use the `.html.haml` extensions for your templates.
 
 ## Optional
 
