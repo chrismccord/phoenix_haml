@@ -11,6 +11,16 @@ defmodule PhoenixHaml.Engine do
   end
 
   defp read!(file_path) do
-    file_path |> File.read! |> Calliope.Render.precompile
+    try do
+      file_path |> File.read! |> Calliope.Render.precompile
+    rescue
+      exception ->
+        case exception do
+          %CalliopeException{message: message} ->
+            reraise %CalliopeException{message: "#{file_path}: " <> message}, System.stacktrace
+          _ ->
+            reraise exception, System.stacktrace
+        end
+    end
   end
 end
