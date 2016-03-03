@@ -6,7 +6,7 @@ end
 defmodule PhoenixHaml.DupHTMLView do
 end
 
-defmodule Mix.Tasks.Phoenix.Gen.Html.HamlTest do
+defmodule Mix.Tasks.PhoenixHaml.Gen.HtmlTest do
   use ExUnit.Case
   import MixHelper
 
@@ -17,7 +17,7 @@ defmodule Mix.Tasks.Phoenix.Gen.Html.HamlTest do
 
   test "generates html resource" do
     in_tmp "generates html resource", fn ->
-      Mix.Tasks.Phoenix.Gen.Html.Haml.run ["user", "users", "name", "age:integer", "height:decimal",
+      Mix.Tasks.PhoenixHaml.Gen.Html.run ["user", "users", "name", "age:integer", "height:decimal",
                                       "nicks:array:text", "famous:boolean", "born_at:datetime",
                                       "secret:uuid", "first_login:date", "alarm:time",
                                       "address_id:references:addresses"]
@@ -127,7 +127,7 @@ defmodule Mix.Tasks.Phoenix.Gen.Html.HamlTest do
 
   test "generates nested resource" do
     in_tmp "generates nested resource", fn ->
-      Mix.Tasks.Phoenix.Gen.Html.Haml.run ["Admin.SuperUser", "super_users", "name:string"]
+      Mix.Tasks.PhoenixHaml.Gen.Html.run ["Admin.SuperUser", "super_users", "name:string"]
 
       assert_file "web/models/admin/super_user.ex"
       assert [_] = Path.wildcard("priv/repo/migrations/*_create_admin_super_user.exs")
@@ -183,7 +183,7 @@ defmodule Mix.Tasks.Phoenix.Gen.Html.HamlTest do
 
   test "generates html resource without model" do
     in_tmp "generates html resource without model", fn ->
-      Mix.Tasks.Phoenix.Gen.Html.Haml.run ["Admin.User", "users", "--no-model", "name:string"]
+      Mix.Tasks.PhoenixHaml.Gen.Html.run ["Admin.User", "users", "--no-model", "name:string"]
 
       refute File.exists? "web/models/admin/user.ex"
       assert [] = Path.wildcard("priv/repo/migrations/*_create_admin_user.exs")
@@ -196,23 +196,23 @@ defmodule Mix.Tasks.Phoenix.Gen.Html.HamlTest do
 
   test "plural can't contain a colon" do
     assert_raise Mix.Error, fn ->
-      Mix.Tasks.Phoenix.Gen.Html.Haml.run ["Admin.User", "name:string", "foo:string"]
+      Mix.Tasks.PhoenixHaml.Gen.Html.run ["Admin.User", "name:string", "foo:string"]
     end
   end
 
   test "plural can't have uppercased characters or camelized format" do
     assert_raise Mix.Error, fn ->
-      Mix.Tasks.Phoenix.Gen.Html.Haml.run ["Admin.User", "Users", "foo:string"]
+      Mix.Tasks.PhoenixHaml.Gen.Html.run ["Admin.User", "Users", "foo:string"]
     end
 
     assert_raise Mix.Error, fn ->
-      Mix.Tasks.Phoenix.Gen.Html.Haml.run ["Admin.User", "AdminUsers", "foo:string"]
+      Mix.Tasks.PhoenixHaml.Gen.Html.run ["Admin.User", "AdminUsers", "foo:string"]
     end
   end
 
   test "name is already defined" do
     assert_raise Mix.Error, fn ->
-      Mix.Tasks.Phoenix.Gen.Html.Haml.run ["DupHTML", "duphtmls"]
+      Mix.Tasks.PhoenixHaml.Gen.Html.run ["DupHTML", "duphtmls"]
     end
   end
 end

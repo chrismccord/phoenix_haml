@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.Phoenix.Gen.Html.Haml do
+defmodule Mix.Tasks.PhoenixHaml.Gen.Html do
   use Mix.Task
 
   @shortdoc "Generates controller, model, and views for an HTML based resource using HAML templates"
@@ -10,7 +10,7 @@ defmodule Mix.Tasks.Phoenix.Gen.Html.Haml do
 
   Generates a Phoenix resource with HAML templates.
 
-      mix phoenix.gen.html.haml User users name:string age:integer
+      mix phoenix_haml.gen.html User users name:string age:integer
 
   The first argument is the module name followed by its plural name (used for resources and schema).
 
@@ -74,7 +74,7 @@ defmodule Mix.Tasks.Phoenix.Gen.Html.Haml do
   defp generate_templates(binding) do
     path = binding[:path]
 
-    Mix.Phoenix.copy_from haml_paths(), "priv/templates/phoenix.gen.html.haml", "", binding, [
+    Mix.Phoenix.copy_from haml_paths(), "priv/templates/phoenix_haml.gen.html", "", binding, [
       {:eex, "edit.html.haml",       "web/templates/#{path}/edit.html.haml"},
       {:eex, "form.html.haml",       "web/templates/#{path}/form.html.haml"},
       {:eex, "index.html.haml",      "web/templates/#{path}/index.html.haml"},
@@ -100,9 +100,9 @@ defmodule Mix.Tasks.Phoenix.Gen.Html.Haml do
 
   defp raise_with_help do
     Mix.raise """
-    mix phoenix.gen.html.haml expects both singular and plural names
+    mix phoenix_haml.gen.html expects both singular and plural names
     of the generated resource followed by any number of attributes:
-        mix phoenix.gen.html.haml User users name:string
+        mix phoenix_haml.gen.html User users name:string
     """
   end
 
