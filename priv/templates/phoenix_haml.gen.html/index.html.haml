@@ -6,7 +6,7 @@
 <%= for {k, _} <- attrs do %>      %th <%= Phoenix.Naming.humanize(Atom.to_string(k)) %><% end %>
       %th
   %tbody
-    = for <%= singular %> <- @<%= plural %> do
+    - for <%= singular %> <- @<%= plural %> do
       %tr
 <%= for {k, _} <- attrs do %>      %td= <%= singular %>.<%= k %><% end %>
       %td.text-right

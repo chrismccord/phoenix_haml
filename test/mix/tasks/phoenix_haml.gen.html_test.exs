@@ -62,7 +62,7 @@ defmodule Mix.Tasks.PhoenixHaml.Gen.HtmlTest do
 
       assert_file "web/templates/user/index.html.haml", fn file ->
         assert file =~ "%th Name"
-        assert file =~ "= for user <- @users do"
+        assert file =~ "- for user <- @users do"
         assert file =~ "%td= user.name"
       end
 
@@ -155,7 +155,7 @@ defmodule Mix.Tasks.PhoenixHaml.Gen.HtmlTest do
       assert_file "web/templates/admin/super_user/index.html.haml", fn file ->
         assert file =~ "%h2 Listing super users"
         assert file =~ "%th Name"
-        assert file =~ "= for super_user <- @super_users do"
+        assert file =~ "- for super_user <- @super_users do"
       end
 
       assert_file "web/templates/admin/super_user/new.html.haml", fn file ->
