@@ -8,7 +8,7 @@ defmodule PhoenixHaml.Mixfile do
       elixir: "~> 1.0.1 or ~> 1.1",
       deps: deps,
       package: [
-        contributors: ["Chris McCord"],
+        contributors: ["Chris McCord", "Stephen Pallen"],
         licenses: ["MIT"],
         links: %{github: "https://github.com/chrismccord/phoenix_haml"}
       ],
