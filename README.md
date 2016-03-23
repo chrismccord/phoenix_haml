@@ -30,5 +30,15 @@ Add haml extension to Phoenix live reload in `config/dev.exs`
         ~r{web/templates/.*(eex|haml)$}
       ]
     ]
+```
 
+## Generators
+
+### Generate Resource
+
+Generates a Phoenix resource similar to ```mix phoenix.gen.html``` except it generates 
+haml templates.
+
+```
+mix phoenix_haml.gen.html User users name:string age:integer
 ```
