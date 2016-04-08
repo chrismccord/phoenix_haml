@@ -9,6 +9,7 @@ defmodule PhoenixHaml.Mixfile do
       deps: deps,
       package: [
         contributors: ["Chris McCord", "Stephen Pallen"],
+        maintainers: ["Chris McCord", "Stephen Pallen"],
         licenses: ["MIT"],
         links: %{github: "https://github.com/chrismccord/phoenix_haml"}
       ],

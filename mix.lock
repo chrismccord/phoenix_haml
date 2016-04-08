@@ -1,4 +1,4 @@
-%{"calliope": {:hex, :calliope, "0.3.0"},
+%{"calliope": {:hex, :calliope, "0.4.0"},
   "cowboy": {:hex, :cowboy, "1.0.2"},
   "cowlib": {:hex, :cowlib, "1.0.1"},
   "phoenix": {:hex, :phoenix, "1.1.0"},
