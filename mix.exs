@@ -26,7 +26,7 @@ defmodule PhoenixHaml.Mixfile do
     [
       {:phoenix, "~> 1.1"},
       {:phoenix_html, "~> 2.3"},
-      {:calliope, "~> 0.3.0"}
+      {:calliope, "~> 0.4.0"}
     ]
   end
 end
