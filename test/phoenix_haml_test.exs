@@ -13,11 +13,11 @@ defmodule PhoenixHamlTest do
       message: "hi",
       layout: {MyApp.PageView, "application.html"}
     )
-    assert html == {:safe, [[["" | "<html><body>"], "" | "<h2>New Template</h2>"] | "</body></html>"]}
+    assert html == {:safe, [[["" | "<html>\n  <body>\n    "], "" | "<h2>\n  New Template\n</h2>\n"] | "\n  </body>\n</html>\n"]}
   end
 
   test "render a haml template without layout" do
     html = View.render(MyApp.PageView, "new.html", [])
-    assert html == {:safe, ["" | "<h2>New Template</h2>"]}
+    assert html == {:safe, ["" | "<h2>\n  New Template\n</h2>\n"]}
   end
 end

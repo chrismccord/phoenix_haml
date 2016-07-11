@@ -1,8 +1,8 @@
-%{"calliope": {:hex, :calliope, "0.4.0"},
+%{"calliope": {:hex, :calliope, "0.4.1", "8b7034343d247199bcf267a6e07ea296dc99ac1e90413c197114c8df0fa0b436", [:mix], []},
   "cowboy": {:hex, :cowboy, "1.0.2"},
   "cowlib": {:hex, :cowlib, "1.0.1"},
-  "phoenix": {:hex, :phoenix, "1.1.0"},
-  "phoenix_html": {:hex, :phoenix_html, "2.3.0"},
-  "plug": {:hex, :plug, "1.0.3"},
-  "poison": {:hex, :poison, "1.5.0"},
+  "phoenix": {:hex, :phoenix, "1.1.0", "3a3ea856563545cf364d5ee85e41fbb6124540d875e65587a245ffedb58a7f68", [:mix], [{:poison, "~> 1.3", [hex: :poison, optional: false]}, {:plug, "~> 1.0", [hex: :plug, optional: false]}, {:cowboy, "~> 1.0", [hex: :cowboy, optional: true]}]},
+  "phoenix_html": {:hex, :phoenix_html, "2.3.0", "28264d1722a22426200224e500b2eac1f38f628e6ec30b20f332c3713edf2f82", [:mix], [{:plug, "~> 0.13 or ~> 1.0", [hex: :plug, optional: false]}]},
+  "plug": {:hex, :plug, "1.0.3", "8bbcbdaa4cb15170b9a15cb12153e8a6d9e176ce78e4c1990ea0b505b0ca24a0", [:mix], [{:cowboy, "~> 1.0", [hex: :cowboy, optional: true]}]},
+  "poison": {:hex, :poison, "1.5.0", "f2f4f460623a6f154683abae34352525e1d918380267cdbd949a07ba57503248", [:mix], []},
   "ranch": {:hex, :ranch, "1.1.0"}}
