@@ -42,6 +42,7 @@ defmodule Mix.Tasks.PhoenixHaml.Gen.Html do
     route   = String.split(path, "/") |> Enum.drop(-1) |> Kernel.++([plural]) |> Enum.join("/")
     binding = binding ++ [plural: plural, route: route, attrs: attrs,
                           binary_id: opts[:binary_id],
+                          sample_id: sample_id(opts),
                           inputs: inputs(attrs), params: Mix.Phoenix.params(attrs),
                           template_singular: String.replace(binding[:singular], "_", " "),
                           template_plural: String.replace(plural, "_", " ")]
@@ -81,6 +82,14 @@ defmodule Mix.Tasks.PhoenixHaml.Gen.Html do
       {:eex, "new.html.haml",        "web/templates/#{path}/new.html.haml"},
       {:eex, "show.html.haml",       "web/templates/#{path}/show.html.haml"},
     ]
+  end
+
+  defp sample_id(opts) do
+    if Keyword.get(opts, :binary_id, false) do
+      Keyword.get(opts, :sample_binary_id, "11111111-1111-1111-1111-111111111111")
+    else
+      -1
+    end
   end
 
   defp validate_args!([_, plural | _] = args) do
