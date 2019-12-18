@@ -11,10 +11,10 @@
      `{:phoenix_haml, github: "chrismccord/phoenix_haml"}`
   2. Add the following to your Phoenix `config/config.exs`
 
-     ```elixir
-    config :phoenix, :template_engines,
-      haml: PhoenixHaml.Engine
-     ```
+```elixir
+  config :phoenix, :template_engines,
+    haml: PhoenixHaml.Engine
+```
   3. Use the `.html.haml` extensions for your templates.
 
 ## Optional
